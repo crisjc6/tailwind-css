@@ -1,11 +1,24 @@
+// See https://tailwindcss.com/docs/configuration for details
+
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  purge: [
+    "./src/**/*.html",
+    "./src/**/*.js",
+    "./src/**/*.jsx",
+    "./src/**/*.css",
+  ],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   theme: {
-    extend: {},
+    fontFamily: {
+      Inter: ["Inter"],
+    },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+  variants: {},
+  plugins: [
+    require("@tailwindcss/custom-forms"),
+    require("@tailwindcss/typography"),
+  ],
+};

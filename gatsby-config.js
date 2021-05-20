@@ -7,7 +7,17 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    'gatsby-plugin-postcss'
+    `gatsby-plugin-postcss`,
+    // highlight-start
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false,
+        develop: false,
+        tailwind: true,
+      },
+    },
+    // highlight-end
     {
       resolve: `gatsby-source-filesystem`,
       options: {
